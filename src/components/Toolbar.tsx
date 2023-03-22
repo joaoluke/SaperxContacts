@@ -7,8 +7,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
+import { useInputDataContext } from "../context/inputData";
+
 export const ToolbarMenu = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const { openModalAdd } = useInputDataContext();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -31,10 +35,12 @@ export const ToolbarMenu = () => {
           component="div"
           sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
         >
-          MUI
+          AGENDA
         </Typography>
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          <Button sx={{ color: "#fff" }}>Adicionar</Button>
+          <Button sx={{ color: "#fff" }} onClick={openModalAdd}>
+            Adicionar Contato
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

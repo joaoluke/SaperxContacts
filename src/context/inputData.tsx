@@ -13,7 +13,6 @@ import {
   phoneMask,
   validateForm,
 } from "../functions";
-import { API } from "../services/api";
 import { InputDataContextType } from "../types/InputDataContext";
 import { useSchedulerContext } from "./scheduler";
 
@@ -78,7 +77,6 @@ const InputDataContextProvider = ({ children }: PropsInputDataProviders) => {
     const { isValid, errors } = validateForm(inputValues, phoneNumbers);
 
     setErrors(errors);
-    console.log(isValid);
     if (isValid) {
       mode === "edit"
         ? updateScheduler(inputValues, phoneNumbers)
@@ -115,7 +113,6 @@ const InputDataContextProvider = ({ children }: PropsInputDataProviders) => {
     setMode("edit");
 
     changeOpenModal(true);
-    console.log(currentScheduler);
     setPhoneNumbers(
       currentScheduler.numbers.map((number) => formatPhoneNumber(number.number))
     );

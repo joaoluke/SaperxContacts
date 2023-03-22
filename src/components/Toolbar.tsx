@@ -10,13 +10,7 @@ import Button from "@mui/material/Button";
 import { useInputDataContext } from "../context/inputData";
 
 export const ToolbarMenu = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   const { openModalAdd } = useInputDataContext();
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
 
   return (
     <AppBar component="nav">
@@ -25,7 +19,6 @@ export const ToolbarMenu = () => {
           color="inherit"
           aria-label="open drawer"
           edge="start"
-          onClick={handleDrawerToggle}
           sx={{ mr: 2, display: { sm: "none" } }}
         >
           <MenuIcon />

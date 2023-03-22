@@ -73,7 +73,7 @@ const SchedulerContextProvider = ({ children }: PropsSchedulerProviders) => {
       setScheduler(response.data.data);
       return response.data.data;
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return [];
     }
   };
@@ -101,7 +101,7 @@ const SchedulerContextProvider = ({ children }: PropsSchedulerProviders) => {
       });
       getSchedulers();
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return [];
     } finally {
       changeOpenModal(false);
@@ -131,7 +131,7 @@ const SchedulerContextProvider = ({ children }: PropsSchedulerProviders) => {
       });
       getSchedulers();
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return [];
     } finally {
       changeOpenModal(false);
@@ -150,7 +150,7 @@ const SchedulerContextProvider = ({ children }: PropsSchedulerProviders) => {
         schedulers.filter((scheduler) => scheduler.id !== idSchedulerToDelete)
       );
     } catch (err) {
-      console.log(err);
+      console.error(err);
       return [];
     } finally {
       changeOpenAlert(false);

@@ -45,7 +45,7 @@ export const ModalContact = () => {
 
   return (
     <Dialog open={true}>
-      <DialogTitle>Cadastrar Contato</DialogTitle>
+      <DialogTitle>{mode === "edit" ? "Atualizar" : "Cadastrar"} Contato</DialogTitle>
       <DialogContent>
         <Grid container spacing={1} sx={{ mt: 1 }}>
           <Grid item xs={12}>
